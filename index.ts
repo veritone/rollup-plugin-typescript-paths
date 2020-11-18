@@ -3,7 +3,7 @@ import { CompilerOptions, findConfigFile, nodeModuleNameResolver, sys } from 'ty
 import { Plugin } from 'rollup';
 
 export const typescriptPaths = ({
-	tsConfigPath = findConfigFile('./', sys.fileExists),
+	tsConfigPath = findConfigFile('./', sys.fileExists, 'tsconfig.lib.json'),
 	absolute = true,
 	transform,
 }: Options = {}): Plugin => {
